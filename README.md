@@ -17,6 +17,10 @@ you can do
 
 assuming you have ssh set up correctly (which you should for class).
 
+You can then start a web server in that directory, and look at `index.html`. 
+While you can use any web server, it makes most sense to use the VSCode Live
+server (since this is a VSCode Tutorial).
+
 ## What is this
 
 You will probably want to use some debugger for class. The programs are complex enough that you are likely to need a debugger. Print statement debugging (console.log in JavaScript) is not going to be sufficient. One option is to simply use the debugger built into the web browser Chrome and FireFox have excellent debuggers built in. See the Chrome Debugger Quick Start for CS 559 (2019 Video) for help getting started. However, if you are using Visual Studio Code (that we recommend for class!) having the debugger integrated into your editor can be very helpful. We strongly recommend that you become familiar with the debugger before you need it for a program.
