@@ -1,26 +1,28 @@
-# CS559 Workbook , Spring 2021
+# Visual Studio Code Debugger Tutorial for CS559
 
-This set of web pages forms a "workbook" assignment for 
-CS559, Computer Graphics at the University of Wisconsin for Spring 2021.
+This is a tutorial for the Visual Studio Code Debugger in the form
+of a CS559 Workbook.
 
-Students should run a local web server and start with the `index.html` page.
-The html files may not work as "files" without a local server.
+Just like a regular workbook, to use it you should clone the repository,
+open the folder in Visual Studio Code, start the Live Server, and open
+the top-level index page in the web browser.
 
-Information about the class is available on the course web:
-https://graphics.cs.wisc.edu/Courses/559-sp2021/
+Being able to use Visual Studio Code is a pre-requisite for this tutorial
+(it is about how to use a more advanced feature in Visual Studio Code).
 
-The `for_students` sub-directory contains files for the students to read and
-modify. 
+Unlike regular workbooks, for this one you should clone the public repository
+you can do
 
-The `libs` sub-directory contains libraries used by the workbook. These
-have separate open source licenses provided in the directories. 
+    git clone git@github.com:CS559/DebuggerTutorial21.git
 
-The workbook content was primarily developed by Prof. Michael Gleicher with
-assistance from the course staff over the years.
+assuming you have ssh set up correctly (which you should for class).
 
-Students are granted the right to use the workbook content for their work
-in class.
+## What is this
 
-The workbook content is Copyright &copy; 2021, Michael Gleicher.
+You will probably want to use some debugger for class. The programs are complex enough that you are likely to need a debugger. Print statement debugging (console.log in JavaScript) is not going to be sufficient. One option is to simply use the debugger built into the web browser Chrome and FireFox have excellent debuggers built in. See the Chrome Debugger Quick Start for CS 559 (2019 Video) for help getting started. However, if you are using Visual Studio Code (that we recommend for class!) having the debugger integrated into your editor can be very helpful. We strongly recommend that you become familiar with the debugger before you need it for a program.
 
-This workbook is provided under a Creative Commons Attribution-NonCommercial 4.0 International license. See https://creativecommons.org/licenses/by-nc/4.0/ for the explanation and https://creativecommons.org/licenses/by-nc/4.0/legalcode for the license itself.
+This tutorial is in the form of a CS559 “Workbook” (see Workbooks on the course web). Unlike the regular workbooks, we will not use GitHub Classroom, and you will not turn it in. It is completely optional, but if you don’t know how to use the Visual Studio debugger, this will help you learn the basics and give you some hands on experience.
+
+Written Jan, 2021 by Gia-Phong Nguyen with help from the CS559 Course Staff. It was updated for 2022 by Hyojoon Park and Michael Gleicher the rest of the CS559 Course Staff.
+
+**Note:** The repository "CS559/DebuggerTutorial21" contains the "built workbook" (html). The workbook is actually written in Hugo. For staff who may need to edit the workbook, look elsewhere.
