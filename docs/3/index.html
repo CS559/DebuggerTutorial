@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- CS559 Workbook Pages - page content &copy; 2021, Michael Gleicher -->
+<!-- This page is part of a Workbook developed for the 
+    CS559 Computer Graphics Class at the University of Wisconsin
+    https://graphics.cs.wisc.edu/Courses/559-sp2021/ -->
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../css/workbook.css">
+        <script src="../../js/resizeIFrames.js"></script>
+    </head>
+    <body>
+        <div class="container container--outer"><div class="maincolumn">
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header"><h1 class="post__title">Page 3: Stepping</h1>
+		</header>
+        
+        
+        
+		<div class="content post__content clearfix">
+            <p>From the last page we saw how to continue to the next breakpoint, but there are some other things we can do to progress through our code in the debugger bar.</p>
+<figure><img src="../../images/debugger%20bar.PNG" width="550"/>
+</figure>
+
+<p>From the bar you can do the following things:</p>
+<ul>
+<li><strong>Continue/Pause:</strong> Continues to the next breakpoint or end of program. Pauses the program if it is continuously running in say an animation loop.</li>
+<li><strong>Step Over:</strong> Goes to the immediate next line of code.</li>
+<li><strong>Step In:</strong> Goes into the next line in a function if applicable, otherwise goes to the immediate next line of code</li>
+<li><strong>Step Out:</strong> Goes out of the function it is currently in and continues to next line</li>
+<li><strong>Restart:</strong> Refreshes the page</li>
+<li><strong>Stop:</strong> Ends debugging and closes the window</li>
+</ul>
+<h2 id="box-exercise-stepping">Box (Exercise): Stepping</h2>
+<p>Below is a canvas with a green square. You can find the javascript in <code>2-1.js</code>. Let&rsquo;s set a breakpoint on line 23 and run the debugger.</p>
+<p><strong>Remember to refresh the page after adding breakpoints if you are already on it in the debugger window</strong></p>
+<iframe
+    title="3-1"
+    src="../../for_students/3-1.html"
+    class="includebox includebox-standard"
+    width="100%"
+    height="100%"
+    scrolling="no"
+    frameborder="0"
+></iframe>
+<p>What you should see at first is an empty canvas. If we step over, we will get a pink square and if we step over again, we will get the green square. You will notice that the debugger simply goes to the next line of code regardless what happens in the function.</p>
+<p>Lets restart and use &lsquo;step in&rsquo; this time. Now you will see that the debugger goes into <code>func1()</code> at line 3, and if you keep stepping in, we will go into <code>func3()</code>, complete it, go back into <code>func1()</code>, complete it, and then the same for <code>func2()</code>. You will see that we drew a blue square, and pink square, and a green square in the order. This is because <code>func3()</code> draws a blue square and is called in <code>func1()</code> before it draws the pink square.</p>
+<p>Lets restart and step into <code>func3()</code> again. This time step out as soon as we get into <code>func3()</code>. You will see that it immediately completes the function and goes back into <code>func1()</code> and draw the blue square. If we were to have stepped out after immediately entering <code>func1()</code>, we would not have seen the blue square because the pink square is also immedately drawn after. Essentially, step out finishes the current function and continues to the next line after the function call.</p>
+<h3 id="the-call-stack">The Call Stack</h3>
+<p>You can tell where we will continue from by looking at the Call Stack in the debugger tab. The image below shows what the Call Stack should look like when we step into <code>func3()</code>. We can see that <code>func3()</code> is at the top of the stack, and we can see that if we step out, we will back into <code>func1()</code>, and then if we step out again we would be in the <code>window.onload()</code> function.</p>
+<figure><img src="../../images/call%20stack.PNG" width="300"/>
+</figure>
+
+<h2 id="summary">Summary</h2>
+<p>These are the basics of how to step through your programs. Feel free to play around with this some more if you are not entirely sure how this works.</p>
+<a href="../../docs/4/" class="Next__Page">Next: Conditional Statements </a>
+
+            
+			
+		</div>
+	</article>
+</main>
+
+                </div>
+                <div class="sidebar">
+<h2 class="Side_Title">Debugger Workbook: A Tutorial on using the VS Code Debugger</h2>
+<p class="Side__Note">Pages:</p>
+<ul class="Side__List">
+    <li class="Side__Item Side__Unselected"><a href="../../">Index (Introduction)</a></li>
+        <li class="Side__Item Side__Unselected"> <a href="../../docs/1/">1: Preliminiaries </a></li>
+        <li class="Side__Item Side__Unselected"> <a href="../../docs/2/">2: Getting Started </a></li>
+        <li class="Side__Item Side__Selected"> 3: Stepping </li>
+        <li class="Side__Item Side__Unselected"> <a href="../../docs/4/">4: Conditional Statements </a></li>
+        <li class="Side__Item Side__Unselected"> <a href="../../docs/5/">5: Tracking Values </a></li>
+</ul>
+</div>
+</div>
+    </body>
+</html>

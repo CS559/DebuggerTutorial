@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- CS559 Workbook Pages - page content &copy; 2021, Michael Gleicher -->
+<!-- This page is part of a Workbook developed for the 
+    CS559 Computer Graphics Class at the University of Wisconsin
+    https://graphics.cs.wisc.edu/Courses/559-sp2021/ -->
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../css/workbook.css">
+        <script src="../../js/resizeIFrames.js"></script>
+    </head>
+    <body>
+        <div class="container container--outer"><div class="maincolumn">
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header"><h1 class="post__title">Page 5: Tracking Values</h1>
+		</header>
+        
+        
+        
+		<div class="content post__content clearfix">
+            <p>The main use of <code>console.log</code> is to check on certain values or write messages that indicate if the code has gone through a certain point. We can do that much more easily
+using the Log Message option when editing a breakpoint to create a logpoint.</p>
+<p>To create a logpoint, start by creating a breakpoint as you usually would. Then right click
+the breakpoint and click &lsquo;Edit Breakpoint&rsquo; just like how you did for creating Expressions. Now select &lsquo;Log Message&rsquo; instead of &lsquo;Expression&rsquo;.</p>
+<figure><img src="../../images/select%20log%20message.png" width="600"/>
+</figure>
+
+<p>Using the logpoint, we can type in a message at any point in the code. <strong>NOTE:</strong> 
+we cannot set a breakpoint on top of a logpoint. If there is an expression or hit count set, it will override the logpoint and no message will appear.</p>
+<p>With the logpoint you can also print values as you would using console.log by adding {} around your variables.</p>
+<figure><img src="../../images/logpoint.PNG" width="600"/>
+</figure>
+
+<h3 id="why-use-this">Why use this?</h3>
+<p>Logpoints are not lines of code added to your program. They simply log values on the side. The main benefit is that they will not make a mess in your code unlike using <code>console.log()</code> all the time and can all be removed easily in the <strong>BREAKPOINTS</strong> tab as mentioned before.</p>
+<h2 id="box-exercise-logging">Box (Exercise): Logging</h2>
+<p>Below is a square going in circle which can be found in <code>4-1.js</code>.</p>
+<iframe
+    title="5-1"
+    src="../../for_students/5-1.html"
+    class="includebox includebox-standard"
+    width="100%"
+    height="100%"
+    scrolling="no"
+    frameborder="0"
+></iframe>
+<p>Let us add the following logpoint to line 40:</p>
+<p><code>Square Info: r: {square.r}, g: {square.g}, b: {square.b}, x: {square.x}, y: {square.y}</code></p>
+<p>Refresh the page and we will be able to see message logged at in the Debug Console in the lower tab of VS Code. You can also see this logged in the Window as well if you press Ctrl + Shift + i and look at the console there. The message should look like this:</p>
+<figure><img src="../../images/loginfo1.PNG" width="600"/>
+</figure>
+
+<p>This seems like a somewhat tedious thing to type though. So instead, we can try logging 
+the square directly. Let&rsquo;s replace the logpoint message we made with this one below:</p>
+<p><code>Square Info: {square}</code></p>
+<p>When we run this, it will log the values of the square variable directly. We can click the little carrot on the left of the variable in the debug console to see all it&rsquo;s values. It should look like this:</p>
+<figure><img src="../../images/loginfo2.PNG" width="600"/>
+</figure>
+
+<p>You will notice that the values greyed out are the same but the ones below those are off. This might be that because we are logging an object, there may be a delay in how it logs the values. Meaning it may try to log the square then, but will finish logging after some of the animation has occurred. You will notice that those values change everytime we refresh.</p>
+<p>If we added a breakpoint on line 42, those values should be accurate since the code will pause before any changes happens to the square, and it will accurately log the square at that time.</p>
+<p><strong>Note:</strong> this is also the same if we were to use the <code>console.log()</code> function.</p>
+<h3 id="loops">Loops</h3>
+<p>Here we logged the square before we entered the animation loop. If you were to put this same logpoint somewhere in the animation loop such as on line 43, you will notice that you will get swarmed by messages updating you on the values of the square. This may be useful, but there is much cleaner way to keep track of certain values shown below.</p>
+<p><strong>Note:</strong> if you add logpoints in this animation loop, you do not need to refresh that page after it has already started running, because you will reach that breakpoint again.</p>
+<h3 id="watching-values">Watching Values</h3>
+<p>In the debug tab, there are three sections:<strong>Variables, Watch,</strong> and <strong>Call Stack</strong>. We already talked about the call stack, but not the other two.</p>
+<p><strong>Variables</strong> contains all the variables currently saved while running your program. If we pause our program in the debugger, all the variables will show up. Variables will also show anytime we hit a breakpoint. We can find the variables we want to observe in here and we <strong>can also modify it</strong>. Try modifying <code>t</code> after pausing the program and continue. You will notice that the square will jump positions.</p>
+<figure><img src="../../images/variables.PNG" width="300"/>
+</figure>
+
+<p><strong>Watch</strong> holds the variables we wish to constantly track. If we right click on a variable in <strong>Variables</strong>, we can &lsquo;Add to Watch&rsquo;. Add the square to Watch. Anytime we stop the program (either by breakpoint or pause), we can see the square&rsquo;s information displayed in watch the same as how we logged it earlier. It should look something like this:</p>
+<figure><img src="../../images/watch.PNG" width="300"/>
+</figure>
+
+<p>This program runs an animation loop in the <code>animate()</code> function. You can set a breakpoint on line 43 and keep continuing iteratively to see how the square changes
+on each animation frame.</p>
+<p>Also feel free to try the things from the previous pages on this page such as expressions and stepping.</p>
+<h2 id="summary">Summary</h2>
+<p>Essentially, you can still log messages and values in the console when you need to. Hopefully
+doing it this way will prove to be faster and also leave less of a mess compared to calling the <code>console.log()</code> function. Also watching values should also be useful since you don&rsquo;t have to constantly log values at various points in time during your code.</p>
+
+            
+			
+		</div>
+	</article>
+</main>
+
+                </div>
+                <div class="sidebar">
+<h2 class="Side_Title">Debugger Workbook: A Tutorial on using the VS Code Debugger</h2>
+<p class="Side__Note">Pages:</p>
+<ul class="Side__List">
+    <li class="Side__Item Side__Unselected"><a href="../../">Index (Introduction)</a></li>
+        <li class="Side__Item Side__Unselected"> <a href="../../docs/1/">1: Preliminiaries </a></li>
+        <li class="Side__Item Side__Unselected"> <a href="../../docs/2/">2: Getting Started </a></li>
+        <li class="Side__Item Side__Unselected"> <a href="../../docs/3/">3: Stepping </a></li>
+        <li class="Side__Item Side__Unselected"> <a href="../../docs/4/">4: Conditional Statements </a></li>
+        <li class="Side__Item Side__Selected"> 5: Tracking Values </li>
+</ul>
+</div>
+</div>
+    </body>
+</html>

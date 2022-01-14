@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- CS559 Workbook Pages - page content &copy; 2021, Michael Gleicher -->
+<!-- This page is part of a Workbook developed for the 
+    CS559 Computer Graphics Class at the University of Wisconsin
+    https://graphics.cs.wisc.edu/Courses/559-sp2021/ -->
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../css/workbook.css">
+        <script src="../../js/resizeIFrames.js"></script>
+    </head>
+    <body>
+        <div class="container container--outer"><div class="maincolumn">
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header"><h1 class="post__title">Page 2: Getting Started</h1>
+		</header>
+        
+        
+        
+		<div class="content post__content clearfix">
+            <p>This section will cover how to set up the debugger for this workbook as well as future workbooks and other projects you may want to debug in the future.</p>
+<p>I also recommend only having a single folder in your workspace being this one, this may make the process below easier.</p>
+<h3 id="setting-up">Setting up</h3>
+<p>For this setup, we&rsquo;re going to be using Chrome but this also works with many other browsers.</p>
+<p>First, install the debugger for Chrome. You can find it by going to the extensions tab found on the left of the VS Code window. Search up &lsquo;Debugger for Chrome&rsquo; and install it.</p>
+<figure><img src="../../images/debugger%20for%20chrome.png" width="650"/>
+</figure>
+
+<p>Run the live server for your page (It should already be running for this Debugger WB).</p>
+<p>Click on the run/debug tab.</p>
+<figure><img src="../../images/run%20and%20debug%20tab.jpg" width="60"/>
+</figure>
+
+<p>The next step may look a little different depending on whether or not you already have debug launch configs set up for debugging.</p>
+<h3 id="if-there-are-no-launch-configs">If there are no launch configs</h3>
+<p>Your debug tab should look like the image below. Click on <strong>Run and Debug</strong>.</p>
+<figure><img src="../../images/run%20and%20debug.PNG" width="300"/>
+</figure>
+
+<h3 id="if-there-are-already-launch-configs">If there are already launch configs</h3>
+<p>The debug tab will look like the image below, containing other launch options. Go to the top and click the scrolldown.
+Click on <strong>Add Config ([Name of Workbook])</strong>.</p>
+<p>For this workbook, you would click <strong>Add Config (DebuggerTutorial21)</strong>.</p>
+<figure><img src="../../images/add%20config.png" width="400"/>
+</figure>
+
+<h3 id="the-steps-after-should-be-the-same">The steps after should be the same</h3>
+<p>It will then ask you to select an environment, in which you will just select what browser you use to open your page, which for this example will be <strong>Chrome</strong> (It might be <strong>Chrome (legacy)</strong>). If you didn&rsquo;t install the Debugger for Chrome, Chrome will not show up as an option.</p>
+<figure><img src="../../images/select%20environment.png" width="650"/>
+</figure>
+
+<p>Now this <code>launch.json</code> file should open up and it can be found in the newly added <code>.vscode</code> folder of this workbook. We need to modify the url so that the port matches the one we are using for the live server. You can also change the name of the config if you wish, but in this example, we will not do that.</p>
+<figure><img src="../../images/change%20port.jpg" width="650"/>
+</figure>
+
+<p>We are now done with setting up the debugger for VS Code.</p>
+<p><strong>If instead, it never asked you to select an environment</strong> and took you straight to the <code>launch.json</code> asking you to select a config
+like in the image below,</p>
+<figure><img src="../../images/add%20additonal%20config.png" width="500"/>
+</figure>
+
+<p>that means you already have a config for the folder and a <code>launch.json</code> file. You should delete the <code>launch.json</code> file the follow the steps above starting from after getting the Debugger for Chrome. There are other ways to handle this, but for those who are new to this, this would be the simplest way to handle this.</p>
+<p><strong>Note:</strong> we only have to do this once per project folder. If you open up a project that you already set up the debugger for, the launch settings will have been saved in <code>launch.json</code> in the <code>.vscode</code> folder in. This effects the entire folder, you don&rsquo;t have to worry about doing this for each individual file.</p>
+<h3 id="running-the-debugger">Running the debugger</h3>
+<p>The new launch config should now show up when you click the dropdown. It should show as:</p>
+<p><strong>Launch Chrome against localhost (DebuggerTutorial21)</strong>.</p>
+<figure><img src="../../images/new%20config.png" width="400"/>
+</figure>
+
+<p>Select this and try running the debugger. It can only run when the live server is open. Make sure you have the correct debugger config selected as shown before. You can run the debugger by clicking the arrow next to your launch tab.</p>
+<figure><img src="../../images/start%20debugger.jpg" width="400"/>
+</figure>
+
+<p>It should open a new window with your page site. In VS Code, you should see this debugger bar at the top of VS Code. You&rsquo;ll also notice that the bar at the bottom turns orange.</p>
+<figure><img src="../../images/debugger%20bar.PNG" width="650"/>
+</figure>
+
+<h2 id="box-exercise-first-breakpoints">Box (Exercise): First breakpoints</h2>
+<p>First, we will need to go to this page in the debugger window.</p>
+<p>Now lets set some breakpoints. Below is a canvas with four squares. The javascript for this can be found in <code>1-1.js</code>. You will see that there are
+four functions and each gets called to draw a square. When your mouse hover overs the line numbers, a semi-transparent red circle will appear to the left. Clicking
+on that circle sets/removes breakpoints.</p>
+<p>Lets add a breakpoint on each function (lines 27-30).</p>
+<figure><img src="../../images/breakpoints.png" width="650"/>
+</figure>
+
+<p>Refresh this page after you have added the breakpoints. If you weren&rsquo;t already on this page, go to it. If you set the breakpoints correctly, you will see that the canvas is empty. You can click on &lsquo;continue&rsquo; in the debugger bar to go to the next breakpoint. You will notice that each square will appear as you continue as the code is paused at each breakpoint.</p>
+<iframe
+    title="2-1"
+    src="../../for_students/2-1.html"
+    class="includebox includebox-standard"
+    width="100%"
+    height="100%"
+    scrolling="no"
+    frameborder="0"
+></iframe>
+<p>**One more thing of note, make sure you continue all the way or remove/disable all breakpoints and refresh when you want to leave the page     while debugging. You won&rsquo;t be able to leave the page until you do. ** Of course, if you are done debugging, you can simply end the debugging session anytime by closing out the window.</p>
+<p>At the bottom of the debug section, there is a <strong>BREAKPOINTS</strong> tab. If you hover over the tab, you will see 3 actions you can do, the one on the far right will allow you to instantly remove all breakpoints.</p>
+<figure><img src="../../images/remove%20breakpoints.jpg" width="400"/>
+</figure>
+
+<h3 id="when-do-breakpoints-activate">When do breakpoints activate?</h3>
+<p>Breakpoints pause the program when the line of the breakpoint is reached. So if you have already reached the end of the program and then you add a breakpoint, it won&rsquo;t do anything since you already went past the breakpoint, you would have to refresh the page to reach it again.</p>
+<p>A breakpoint can still activate if you add it after starting your program without having to refresh. This would occur in things like mouse events or animation loops where functions may get called again after time has passed, and if you placed a breakpoint in those repeated functions before it gets called, it will pause when it does. We can see this later in section 4&rsquo;s exercise.</p>
+<h3 id="why-are-my-breakpoints-greyed-out">Why are my breakpoints greyed out?</h3>
+<p>Below is an image of what breakpoints look like when they are greyed out.</p>
+<figure><img src="../../images/grey%20breakpoints.PNG" width="650"/>
+</figure>
+
+<p>This simply means that the code area is not being loaded, (I.E. the page containing the Code is not the currently visited page). They will turn red when you go to the page containing the code with the breakpoints.</p>
+<p>This could also mean you are debugging in the wrong launch config or have some kind of issue with the config. If you are having issues with the config, the simplest thing to do would be to the delete the <code>.vscode</code> folder in your project and redo the steps above on this page to create the config.</p>
+<h3 id="too-many-windows">Too many windows?</h3>
+<p>Right now, it seems like it takes 3 windows to debug: VS Code, the live server window, and the debugger window. If this is too hard to cram on the screen, we can close out/ignore/minimize the live server window. As long as the live server is running, we can run the debugger irregardless of if the window is already open. Knowing this, you could instead do everything in the debugger window.</p>
+<h2 id="summary">Summary</h2>
+<p>This was essentally how we setup the VS Code debugger to run. While just being able to pause a program on a line may seem powerful on its own, there is much more that can be done. Next we will look at stepping through our code.</p>
+<a href="../../docs/3/" class="Next__Page">Next: Stepping </a>
+
+            
+			
+		</div>
+	</article>
+</main>
+
+                </div>
+                <div class="sidebar">
+<h2 class="Side_Title">Debugger Workbook: A Tutorial on using the VS Code Debugger</h2>
+<p class="Side__Note">Pages:</p>
+<ul class="Side__List">
+    <li class="Side__Item Side__Unselected"><a href="../../">Index (Introduction)</a></li>
+        <li class="Side__Item Side__Unselected"> <a href="../../docs/1/">1: Preliminiaries </a></li>
+        <li class="Side__Item Side__Selected"> 2: Getting Started </li>
+        <li class="Side__Item Side__Unselected"> <a href="../../docs/3/">3: Stepping </a></li>
+        <li class="Side__Item Side__Unselected"> <a href="../../docs/4/">4: Conditional Statements </a></li>
+        <li class="Side__Item Side__Unselected"> <a href="../../docs/5/">5: Tracking Values </a></li>
+</ul>
+</div>
+</div>
+    </body>
+</html>
