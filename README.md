@@ -29,4 +29,4 @@ This tutorial is in the form of a CS559 “Workbook” (see Workbooks on the cou
 
 Written Jan, 2021 by Gia-Phong Nguyen with help from the CS559 Course Staff. It was updated for 2022 by Hyojoon Park and Michael Gleicher the rest of the CS559 Course Staff.
 
-**Note:** The repository "CS559/DebuggerTutorial21" contains the "built workbook" (html). The workbook is actually written in Hugo. For staff who may need to edit the workbook, look elsewhere.
+**Note:** The repository "CS559/DebuggerTutorial" contains the "built workbook" (html). The workbook is actually written in Hugo. For staff who may need to edit the workbook, look elsewhere (the Workbooks repo).
