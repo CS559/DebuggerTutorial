@@ -13,7 +13,7 @@ Being able to use Visual Studio Code is a pre-requisite for this tutorial
 Unlike regular workbooks, for this one you should clone the public repository
 you can do
 
-    git clone git@github.com:CS559/DebuggerTutorial21.git
+    git clone git@github.com:CS559/DebuggerTutorial.git
 
 assuming you have ssh set up correctly (which you should for class).
 
