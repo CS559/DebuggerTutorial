@@ -37,12 +37,12 @@
 <h3 id="if-there-are-already-launch-configs">If there are already launch configs</h3>
 <p>The debug tab will look like the image below, containing other launch options. Go to the top and click the scrolldown.
 Click on <strong>Add Config ([Name of Workbook])</strong>.</p>
-<p>For this workbook, you would click <strong>Add Config (DebuggerTutorial21)</strong>.</p>
+<p>For this workbook, you would click <strong>Add Config (DebuggerTutorial)</strong>.</p>
 <figure><img src="../../images/add%20config.png" width="400"/>
 </figure>
 
 <h3 id="the-steps-after-should-be-the-same">The steps after should be the same</h3>
-<p>It will then ask you to select an environment, in which you will just select what browser you use to open your page, which for this example will be <strong>Chrome</strong> (It might be <strong>Chrome (legacy)</strong>). If you didn&rsquo;t install the Debugger for Chrome, Chrome will not show up as an option.</p>
+<p>It will then ask you to select an environment, in which you will just select what browser you use to open your page, which for this example will be <strong>Chrome</strong> (It might be <strong>Chrome (legacy)</strong>).</p>
 <figure><img src="../../images/select%20environment.png" width="650"/>
 </figure>
 
@@ -58,9 +58,47 @@ like in the image below,</p>
 
 <p>that means you already have a config for the folder and a <code>launch.json</code> file. You should delete the <code>launch.json</code> file the follow the steps above starting from after getting the Debugger for Chrome. There are other ways to handle this, but for those who are new to this, this would be the simplest way to handle this.</p>
 <p><strong>Note:</strong> we only have to do this once per project folder. If you open up a project that you already set up the debugger for, the launch settings will have been saved in <code>launch.json</code> in the <code>.vscode</code> folder in. This effects the entire folder, you don&rsquo;t have to worry about doing this for each individual file.</p>
+<p><strong>Note:</strong> by default, the <code>launch.json</code> sets things up for port 8080, but LiveServer uses port 5500. This means you must edit the <code>launch.json</code> file to refer to the correct port.</p>
+<p>An example of a valid launch.json file is (you can see we edited the name to be meaningful on line 8, and to refer to port 5500 on line 11):
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="background-color:#e1e1e1"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="background-color:#e1e1e1"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#111">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Use IntelliSense to learn about possible attributes.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// Hover to view descriptions of existing attributes.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;version&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;0.2.0&#34;</span><span style="color:#111">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;configurations&#34;</span><span style="color:#111">:</span> <span style="color:#111">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#111">{</span>
+</span></span><span style="display:flex; background-color:#e1e1e1"><span>            <span style="color:#f92672">&#34;name&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;Launch Chrome to Live Server (Live server must be running)&#34;</span><span style="color:#111">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;request&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;launch&#34;</span><span style="color:#111">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;type&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;chrome&#34;</span><span style="color:#111">,</span>
+</span></span><span style="display:flex; background-color:#e1e1e1"><span>            <span style="color:#f92672">&#34;url&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;http://localhost:5500&#34;</span><span style="color:#111">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;webRoot&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;${workspaceFolder}&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#111">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#111">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#111">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div></p>
 <h3 id="running-the-debugger">Running the debugger</h3>
 <p>The new launch config should now show up when you click the dropdown. It should show as:</p>
-<p><strong>Launch Chrome against localhost (DebuggerTutorial21)</strong>.</p>
+<p><strong>Launch Chrome against localhost (DebuggerTutorial21)</strong>. (or something similar)</p>
 <figure><img src="../../images/new%20config.png" width="400"/>
 </figure>
 
