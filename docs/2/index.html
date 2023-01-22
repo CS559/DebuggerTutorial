@@ -23,10 +23,6 @@
 <p>I also recommend only having a single folder in your workspace being this one, this may make the process below easier.</p>
 <h3 id="setting-up">Setting up</h3>
 <p>For this setup, we&rsquo;re going to be using Chrome but this also works with many other browsers.</p>
-<p>First, install the debugger for Chrome. You can find it by going to the extensions tab found on the left of the VS Code window. Search up &lsquo;Debugger for Chrome&rsquo; and install it.</p>
-<figure><img src="../../images/debugger%20for%20chrome.png" width="650"/>
-</figure>
-
 <p>Run the live server for your page (It should already be running for this Debugger WB).</p>
 <p>Click on the run/debug tab.</p>
 <figure><img src="../../images/run%20and%20debug%20tab.jpg" width="60"/>
@@ -78,7 +74,7 @@ like in the image below,</p>
 
 <h2 id="box-exercise-first-breakpoints">Box (Exercise): First breakpoints</h2>
 <p>First, we will need to go to this page in the debugger window.</p>
-<p>Now lets set some breakpoints. Below is a canvas with four squares. The javascript for this can be found in <code>1-1.js</code>. You will see that there are
+<p>Now lets set some breakpoints. Below is a canvas with four squares. The javascript for this can be found in <code>2-1.js</code>. You will see that there are
 four functions and each gets called to draw a square. When your mouse hover overs the line numbers, a semi-transparent red circle will appear to the left. Clicking
 on that circle sets/removes breakpoints.</p>
 <p>Lets add a breakpoint on each function (lines 27-30).</p>
@@ -95,8 +91,7 @@ on that circle sets/removes breakpoints.</p>
     scrolling="no"
     frameborder="0"
 ></iframe>
-<p>**One more thing of note, make sure you continue all the way or remove/disable all breakpoints and refresh when you want to leave the page     while debugging. You won&rsquo;t be able to leave the page until you do. ** Of course, if you are done debugging, you can simply end the debugging session anytime by closing out the window.</p>
-<p>At the bottom of the debug section, there is a <strong>BREAKPOINTS</strong> tab. If you hover over the tab, you will see 3 actions you can do, the one on the far right will allow you to instantly remove all breakpoints.</p>
+<p>You can manage the breakpoints in the <strong>BREAKPOINTS</strong> tab at the bottom of the debug section. If you decide that for now the program does not need to break here, you can disable the workpoint by unchecking the box in front of it. If you hover over the tab, you will see 3 actions you can do, the one on the far right will allow you to instantly remove all breakpoints.</p>
 <figure><img src="../../images/remove%20breakpoints.jpg" width="400"/>
 </figure>
 
@@ -110,8 +105,6 @@ on that circle sets/removes breakpoints.</p>
 
 <p>This simply means that the code area is not being loaded, (I.E. the page containing the Code is not the currently visited page). They will turn red when you go to the page containing the code with the breakpoints.</p>
 <p>This could also mean you are debugging in the wrong launch config or have some kind of issue with the config. If you are having issues with the config, the simplest thing to do would be to the delete the <code>.vscode</code> folder in your project and redo the steps above on this page to create the config.</p>
-<h3 id="too-many-windows">Too many windows?</h3>
-<p>Right now, it seems like it takes 3 windows to debug: VS Code, the live server window, and the debugger window. If this is too hard to cram on the screen, we can close out/ignore/minimize the live server window. As long as the live server is running, we can run the debugger irregardless of if the window is already open. Knowing this, you could instead do everything in the debugger window.</p>
 <h2 id="summary">Summary</h2>
 <p>This was essentally how we setup the VS Code debugger to run. While just being able to pause a program on a line may seem powerful on its own, there is much more that can be done. Next we will look at stepping through our code.</p>
 <a href="../../docs/3/" class="Next__Page">Next: Stepping </a>

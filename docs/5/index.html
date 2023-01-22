@@ -26,7 +26,7 @@ the breakpoint and click &lsquo;Edit Breakpoint&rsquo; just like how you did for
 <figure><img src="../../images/select%20log%20message.png" width="600"/>
 </figure>
 
-<p>Using the logpoint, we can type in a message at any point in the code. <strong>NOTE:</strong> 
+<p>Using the logpoint, we can type in a message at any point in the code. <strong>NOTE:</strong>
 we cannot set a breakpoint on top of a logpoint. If there is an expression or hit count set, it will override the logpoint and no message will appear.</p>
 <p>With the logpoint you can also print values as you would using console.log by adding {} around your variables.</p>
 <figure><img src="../../images/logpoint.PNG" width="600"/>
@@ -35,7 +35,7 @@ we cannot set a breakpoint on top of a logpoint. If there is an expression or hi
 <h3 id="why-use-this">Why use this?</h3>
 <p>Logpoints are not lines of code added to your program. They simply log values on the side. The main benefit is that they will not make a mess in your code unlike using <code>console.log()</code> all the time and can all be removed easily in the <strong>BREAKPOINTS</strong> tab as mentioned before.</p>
 <h2 id="box-exercise-logging">Box (Exercise): Logging</h2>
-<p>Below is a square going in circle which can be found in <code>4-1.js</code>.</p>
+<p>Below is a square going in circle which can be found in <code>5-1.js</code>.</p>
 <iframe
     title="5-1"
     src="../../for_students/5-1.html"
@@ -51,7 +51,7 @@ we cannot set a breakpoint on top of a logpoint. If there is an expression or hi
 <figure><img src="../../images/loginfo1.PNG" width="600"/>
 </figure>
 
-<p>This seems like a somewhat tedious thing to type though. So instead, we can try logging 
+<p>This seems like a somewhat tedious thing to type though. So instead, we can try logging
 the square directly. Let&rsquo;s replace the logpoint message we made with this one below:</p>
 <p><code>Square Info: {square}</code></p>
 <p>When we run this, it will log the values of the square variable directly. We can click the little carrot on the left of the variable in the debug console to see all it&rsquo;s values. It should look like this:</p>

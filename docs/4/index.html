@@ -19,17 +19,20 @@
         
         
         
-		<div class="content post__content clearfix"><h2 id="conditional-statements">Conditional Statements</h2>
-<p>With breakpoints, you can also set them to stop your program on certain conditions.</p>
-<p>If you right click on a breakpoint you&rsquo;ve made, you can edit the breakpoint as well as remove it or enable/disable it.</p>
+		<div class="content post__content clearfix"><h2 id="conditional-breakpoints">Conditional Breakpoints</h2>
+<p>Conditional breakpoints are very useful when there is a loop but you only want the program to stop when a certain value is reached. You can create a conditional breakpoint like a normal one, except you right click on the red circle and choose &ldquo;Add Conditional Breakpoint &hellip;&rdquo;.</p>
+<figure><img src="../../images/conditional%20breakpoint.png" width="600"/>
+</figure>
+
+<p>Or if you right click on a breakpoint you&rsquo;ve made and choose &ldquo;Edit Breakpoint&hellip;&rdquo;, you can make it a conditional one.</p>
 <figure><img src="../../images/editB1.png" width="600"/>
 </figure>
 
-<p>When you are editing a breakpoint, you can set it to &lsquo;Expression&rsquo; which will make the breakpoint only stop the program if the condition you set is met at the breakpoint. Make sure you hit Enter after setting your expression to save the breakpoint conditional. You can also hit Esc to cancel.</p>
+<p>Now you are being prompted a &lsquo;Expression&rsquo; to determine when it breaks. You can write any Javascript expressions, even make function calls. Just make sure to hit Enter after setting your expression to save, or Esc to cancel.</p>
 <figure><img src="../../images/editB2.png" width="600"/>
 </figure>
 
-<h2 id="box-exercise-conditional-statements">Box (Exercise): Conditional Statements</h2>
+<h2 id="box-exercise-conditional-breakpoints">Box (Exercise): Conditional Breakpoints</h2>
 <p>Below is a canvas with a green square just like the last page, but if you look at <code>3-1.js</code>, you will see that there is a for loop that keeps drawing a different colored square. Lets set a breakpoint on line 24 and run the debugger.</p>
 <p><strong>Remember to refresh the page after adding breakpoints if you are already on it in the debugger window</strong></p>
 <iframe
@@ -42,8 +45,8 @@
     frameborder="0"
 ></iframe>
 <p>Nothing should appear when on the canvas at the breakpoint. If we keep continuing, We will first see a red square that slowly transitions to green.</p>
-<p>Now edit that breakpoint and go to &lsquo;Expression&rsquo;. Set it to <code>g == 100</code>. This will make it so that the breakpoint only stops the program when g == 100. Restart the page and you should see a brownish square when the debugger pauses then. If we continue, it should jump to the end and we&rsquo;ll get the green square again.</p>
-<p>You can also try this with other expressions. Anything you can write in an <i>if statements</i> you can write in the Expression. Also try using other values such as the r value or the i value.</p>
+<p>Now edit that breakpoint and go to &lsquo;Expression&rsquo;. Set it to <code>g == 100</code>. Restart the page and you should see a brownish square when the debugger pauses then. If we continue, it should jump to the end and we&rsquo;ll get the green square again.</p>
+<p>You can also try this with other expressions. Anything you can write in an <i>if statements</i> you can write in the Expression. Also try using other variables such as &lsquo;r&rsquo; and &lsquo;i&rsquo;.</p>
 <h2 id="summary">Summary</h2>
 <p>We have the power to set the breakpoints to only activate when we want them to. This can save us a lot of time when we only want the program to stop when a specific value is reached rather than constantly step until we get that value.</p>
 <a href="../../docs/5/" class="Next__Page">Next: Tracking Values </a>
